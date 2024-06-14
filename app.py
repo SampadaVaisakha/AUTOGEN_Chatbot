@@ -1,5 +1,5 @@
 import os
-import fitz  # PyMuPDF
+import fitz
 from flask import Flask, request, render_template
 from dotenv import load_dotenv
 from autogen import AssistantAgent, UserProxyAgent
@@ -92,7 +92,7 @@ def index():
                     summary = conv['content']
                     break
 
-            # Shorten summary to a specific length, e.g., first 200 characters
+            # Shorten summary to a specific length
             if summary:
                 short_summary = summary[:1500] + '...' if len(summary) > 1500 else summary
             else:
